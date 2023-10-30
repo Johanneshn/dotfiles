@@ -3,10 +3,10 @@
   "window_hiding_behaviour": "Cloak",
   "cross_monitor_move_behaviour": "Insert",
   "alt_focus_hack": true,
-  "default_workspace_padding": 20,
-  "default_container_padding": 20,
+  "default_workspace_padding": 10,
+  "default_container_padding": 10,
   "active_window_border": true,
-  "border_width": 10,
+  "border_width": 5,
   "active_window_border_colours": {
     "single": { "r": 66, "g": 165, "b": 245 },
     "stack": { "r": 256, "g": 165, "b": 66 },
@@ -23,4 +23,4 @@
       ]
     }
   ]
-}
+  }
