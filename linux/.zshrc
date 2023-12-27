@@ -3,10 +3,14 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+#ranger
+export EDITOR=lvim;
+export VISUAL=lvim;
 
 export PATH=/home/johannes/.local/bin:$PATH
 
-eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/robbyrussell.omp.json)"
+
+eval "$(oh-my-posh init zsh --config $(brew --prefix oh-my-posh)/themes/pure.omp.json)"
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
@@ -73,7 +77,8 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git z brew zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete vi-mode)
+# thefuck
+plugins=(git z zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete vi-mode fzf ripgrep fd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,4 +112,9 @@ source $ZSH/oh-my-zsh.sh
 alias ls='exa --icons --group-directories-first'
 alias ll='exa -l --icons --no-user --group-directories-first  --time-style long-iso'
 alias la='exa -la --icons --no-user --group-directories-first  --time-style long-iso'
+alias lg='lazygit'
+
 eval "$(zellij setup --generate-auto-start zsh)"
+
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
