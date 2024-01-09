@@ -3,9 +3,13 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 --
--- -- plugins
+
+lvim.builtin.autopairs.active = false
+-- plugins
 lvim.plugins = {
-  -- "Mofiqul/dracula.nvim",
+  {
+    "mg979/vim-visual-multi"
+  },
   {
     "phaazon/hop.nvim",
     event = "BufRead",
