@@ -11,12 +11,21 @@
 --   },
 -- }
 --
+--return {
+--  { "rebelot/kanagawa.nvim" },
+--  {
+--    "LazyVim/LazyVim",
+--    opts = {
+--      colorscheme = "kanagawa",
+--    },
+--  },
+--}
 return {
-  { "rebelot/kanagawa.nvim" },
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "kanagawa",
-    },
-  },
+  "navarasu/onedark.nvim",
+  lazy = false,
+  priority = 1000,
+  init = function()
+    require("onedark").setup({ style = "darker" })
+    require("onedark").load()
+  end,
 }
