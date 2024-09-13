@@ -12,13 +12,23 @@ Set-Alias -Name ff -Value Find-File
 Set-Alias -Name grep -Value Find-String
 Set-Alias -Name touch -Value New-File
 Set-Alias -Name which -Value Show-Command
-Set-Alias -Name ls -Value Get-ChildItemPretty
-Set-Alias -Name ll -Value Get-ChildItemPretty
-Set-Alias -Name la -Value Get-ChildItemPretty
-Set-Alias -Name l -Value Get-ChildItemPretty
+Set-Alias -Name ls -Value lsd
+Set-Alias -Name ll -Value lsd
+Set-Alias -Name la -Value lsd
+Set-Alias -Name l -Value lsd
 Set-Alias -Name su -Value Start-AdminSession
 Set-Alias -Name cat -Value bat
+Set-Alias -Name yy Yazi-Yazi
 
+function Yazi-Yazi {
+    $tmp = [System.IO.Path]::GetTempFileName()
+    yazi $args --cwd-file="$tmp"
+    $cwd = Get-Content -Path $tmp
+    if (-not [String]::IsNullOrEmpty($cwd) -and $cwd -ne $PWD.Path) {
+        Set-Location -LiteralPath $cwd
+    }
+    Remove-Item -Path $tmp
+}
 function Find-File {
     <#
     .SYNOPSIS
@@ -150,6 +160,10 @@ Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionSource History
 Set-PSReadLineOption -PredictionViewStyle ListView
 Set-PSReadLineOption -EditMode Windows
+
+Set-PSReadLineOption -AddToHistoryHandler {
+    return $true
+}
 
 Import-Module Terminal-Icons
 oh-my-posh init pwsh --config C:\Users\Johannes\AppData\Local\Programs\oh-my-posh\themes/catppuccin_macchiato.omp.json | Invoke-Expression
