@@ -1,1 +1,0 @@
-https://github.com/Aloxaf/fzf-tab#oh-my-zsh
