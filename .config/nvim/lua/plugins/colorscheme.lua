@@ -1,0 +1,159 @@
+-- return {
+--   "Shatur/neovim-ayu",
+--   priority = 1000,
+--   config = function()
+--     require("ayu").setup({
+--       mirage = true,
+--       -- overrides = {
+--       --   Normal = { bg = "None" },
+--       --   ColorColumn = { bg = "None" },
+--       --   SignColumn = { bg = "None" },
+--       --   Folded = { bg = "None" },
+--       --   FoldColumn = { bg = "None" },
+--       --   CursorLine = { bg = "None" },
+--       --   CursorColumn = { bg = "None" },
+--       --   WhichKeyFloat = { bg = "None" },
+--       --   VertSplit = { bg = "None" },
+--       -- },
+--     })
+--     vim.cmd([[ colorscheme ayu ]])
+--   end,
+-- }
+-- return {
+--   "navarasu/onedark.nvim",
+--   lazy = false,
+--   priority = 1000,
+--   config = function()
+--     require("onedark").setup({
+--       style = "warm",
+--     })
+--     vim.cmd.colorscheme("onedark")
+--   end,
+-- }
+-- return {
+--   {
+--     "EdenEast/nightfox.nvim",
+--     variant = "carbonfox",
+--   },
+-- }
+--
+-- return {
+--
+--   {
+--     "rebelot/kanagawa.nvim",
+--     priority = 1000,
+--     opts = {
+--       transparent = true,
+--       theme = "wave",
+--       background = {
+--         dark = "dragon",
+--       },
+--       colors = {
+--         theme = {
+--           wave = {
+--             ui = {
+--               bg = "#181616",
+--             },
+--           },
+--           all = {
+--             ui = {
+--               bg_gutter = "none",
+--             },
+--           },
+--         },
+--       },
+--     },
+--   },
+-- }
+-- return {
+--   "Mofiqul/vscode.nvim",
+--   config = function()
+--     require("vscode").setup({
+--       transparent = true,
+--     })
+--   end,
+-- }
+-- return {
+--   "Shatur/neovim-ayu",
+--   priority = 1000,
+--   config = function()
+--     require("ayu").setup({
+--       mirage = true,
+--       overrides = {
+--         Normal = { bg = "None" },
+--         ColorColumn = { bg = "None" },
+--         SignColumn = { bg = "None" },
+--         Folded = { bg = "None" },
+--         FoldColumn = { bg = "None" },
+--         CursorLine = { bg = "None" },
+--         CursorColumn = { bg = "None" },
+--         WhichKeyFloat = { bg = "None" },
+--         VertSplit = { bg = "None" },
+--       },
+--     })
+--     vim.cmd([[ colorscheme ayu ]])
+--   end,
+-- }
+--
+--
+--
+--
+--
+--
+
+-- vim.opt.background = "dark"
+--
+-- return {
+--   "diegoulloao/neofusion.nvim",
+--   lazy = false,
+--   enabled = true,
+--   priority = 1000,
+--   config = function()
+--     require("neofusion").setup({
+--       transparent_mode = true
+--     })
+--
+--     vim.cmd([[ colorscheme neofusion ]])
+--   end,
+-- }
+
+-- return {
+--   "tokyonight.nvim",
+--   lazy = true,
+--   priority = 1000,
+--   opts = function()
+--     return {
+--       transparent = true,
+--       styles = {
+--         sidebars = "transparent",
+--         floats = "transparent",
+--       },
+--     }
+--   end,
+-- }
+-- }
+-- }
+return {
+  "catppuccin/nvim",
+  name = "catppuccin",
+  enabled = true,
+  lazy = false,
+  priority = 1000,
+  config = function()
+    require("catppuccin").setup({
+      flavour = "mocha",
+      transparent_background = true,
+      custom_highlights = function(colors)
+        return {
+          Folded = { bg = colors.none },
+          UfoFoldedEllipsis = { fg = colors.blue, bg = colors.none },
+        }
+      end,
+      integrations = {
+        notify = true,
+      },
+    })
+
+    vim.cmd.colorscheme("catppuccin")
+  end,
+}
